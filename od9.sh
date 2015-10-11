@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-# Based on a script for Installation of Odoo Rx on Ubuntu 14.04 LTS
+# Based on a script for Installation of Odoo on Ubuntu 14.04 LTS
 # Author: André Schenkels, ICTSTUDIO 2014
 #-------------------------------------------------------------------------------
 #  
@@ -15,8 +15,10 @@ OE_USER="odoo"
 OE_HOME="/opt/$OE_USER"
 OE_HOME_EXT="/opt/$OE_USER/$OE_USER-server"
 
-#Enter version for checkout "9.0" for version 9.0, 8.0, 7.0 (version 7), saas-4, saas-5 (opendays version) and "master" for trunk
+# Enter Odoo version for checkout "9.0" for version 9.0, 8.0, 7.0 (version 7), saas-4, saas-5 (opendays version) and "master" for trunk
 OE_VERSION="9.0"
+# Enter Postgresql version
+PG_VERSION="9.3"
 
 # Set the superadmin password
 # Don't forget to change once Odoo is installed
