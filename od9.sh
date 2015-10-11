@@ -1,28 +1,21 @@
 #!/bin/bash
 ################################################################################
-# Script for Installation of Odoo 9 on Ubuntu 14.04 LTS
+# Based on a script for Installation of Odoo Rx on Ubuntu 14.04 LTS
 # Author: André Schenkels, ICTSTUDIO 2014
 #-------------------------------------------------------------------------------
 #  
-# This script will install ODOO Server on
-# clean Ubuntu 14.04 Server
+# This script will install ODOO Server on a Ubuntu 14.04 Server
 #-------------------------------------------------------------------------------
-# USAGE:
-#
-# od9
-#
-# EXAMPLE:
-# ./od9 
 #
 ################################################################################
  
 ##fixed parameters
-#openerp
+#odoo
 OE_USER="odoo"
 OE_HOME="/opt/$OE_USER"
 OE_HOME_EXT="/opt/$OE_USER/$OE_USER-server"
 
-#Enter version for checkout "8.0" for version 8.0, "7.0 (version 7), saas-4, saas-5 (opendays version) and "master" for trunk
+#Enter version for checkout "9.0" for version 9.0, 8.0, 7.0 (version 7), saas-4, saas-5 (opendays version) and "master" for trunk
 OE_VERSION="9.0"
 
 # Set the superadmin password
@@ -53,13 +46,14 @@ sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 # Install Dependencies
 #--------------------------------------------------
 echo -e "\n---- Install tool packages ----"
-sudo apt-get install wget python-pip -y
+sudo apt-get install python-pip -y
 
 echo -e "\n---- Install Node-less ----"
 sudo apt-get install node-less -y
 
 echo -e "\n---- Install python packages ----"
 sudo apt-get install python-babel python-pychart python-cups python-dateutil python-decorator python-docutils python-feedparser python-gdata python-geoip python-gevent python-greenlet python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-markupsafe python-mock python-openid python-passlib python-pil python-psutil python-psycopg2 python-pydot python-pyparsing python-pypdf python-tz python-usb python-yaml python-qrcode python-reportlab python-requests python-simplejson python-six python-unicodecsv python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-zsi -y
+sudo pip install jcconv ofxparse suds-jurko
 
 echo -e "\n---- Create ODOO system user ----"
 sudo adduser --system --quiet --shell=/bin/bash --home=$OE_HOME --gecos 'ODOO' --group $OE_USER
