@@ -184,4 +184,4 @@ sudo chown root: /etc/init.d/$OE_CONFIG
 echo -e "* Start ODOO on Startup"
 sudo update-rc.d $OE_CONFIG defaults
  
-echo "Done! The ODOO server can be started with /etc/init.d/$OE_CONFIG"
+echo "Done! The ODOO server can be started with /etc/init.d/$OE_CONFIG or with sudo service $OE_CONFIG start"
