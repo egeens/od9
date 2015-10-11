@@ -53,17 +53,14 @@ sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 # Install Dependencies
 #--------------------------------------------------
 echo -e "\n---- Install tool packages ----"
-sudo apt-get install wget git bzr bzrtools python-pip -y
+sudo apt-get install wget python-pip -y
 
 echo -e "\n---- Install Node-less ----"
 sudo apt-get install node-less -y
 
 echo -e "\n---- Install python packages ----"
-sudo apt-get install python-cups python-dateutil python-decorator python-docutils python-feedparser python-geoip python-gevent python-imaging python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-mock python-openid python-passlib python-pil python-psutil python-psycopg2 python-pybabel python-pychart python-pydot python-pyparsing python-pypdf python-reportlab python-requests python-simplejson python-tz python-unicodecsv python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-yaml python-zsi -y
-	
-echo -e "\n---- Install python libraries ----"
-sudo pip install gdata
-	
+sudo apt-get install python-argparse python-babel python-chart python-cups python-dateutil python-decorator python-docutils python-feedparser python-gdata python-geoip python-gevent python-greenlet python-jcconv python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-markupsafe python-mock python-ofxparse python-openid python-passlib python-pillow python-psutil python-psycopg2 python-psycogreen python-pydot python-pyparsing python-pypdf python-pyserial python-pytz python-pyusb python-pyyaml python-qrcode python-reportlab python-requests python-simplejson python-six python-suds-jurko python-unicodecsv python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-wsgiref python-xlwt python-zsi -y
+
 echo -e "\n---- Create ODOO system user ----"
 sudo adduser --system --quiet --shell=/bin/bash --home=$OE_HOME --gecos 'ODOO' --group $OE_USER
 
