@@ -59,7 +59,7 @@ echo -e "\n---- Install Node-less ----"
 sudo apt-get install node-less -y
 
 echo -e "\n---- Install python packages ----"
-sudo apt-get install python-babel python-pychart python-cups python-dateutil python-decorator python-docutils python-feedparser python-gdata python-geoip python-gevent python-greenlet python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-markupsafe python-mock python-openid python-passlib python-pil python-psutil python-psycopg2 python-psycogreen python-pydot python-pyparsing python-pypdf python-pyserial python-tz python-usb python-yaml python-qrcode python-reportlab python-requests python-simplejson python-six python-suds-jurko python-unicodecsv python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-zsi -y
+sudo apt-get install python-babel python-pychart python-cups python-dateutil python-decorator python-docutils python-feedparser python-gdata python-geoip python-gevent python-greenlet python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-markupsafe python-mock python-openid python-passlib python-pil python-psutil python-psycopg2 python-pydot python-pyparsing python-pypdf python-tz python-usb python-yaml python-qrcode python-reportlab python-requests python-simplejson python-six python-unicodecsv python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-zsi -y
 
 echo -e "\n---- Create ODOO system user ----"
 sudo adduser --system --quiet --shell=/bin/bash --home=$OE_HOME --gecos 'ODOO' --group $OE_USER
