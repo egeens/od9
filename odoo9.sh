@@ -50,8 +50,11 @@ sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 echo -e "\n---- Install tool packages ----"
 sudo apt-get install python-pip -y
 
-echo -e "\n---- Install Node-less ----"
-sudo apt-get install node-less -y
+echo -e "\n---- Install Nodejs and npm ----"
+sudo apt-get install nodejs -y
+sudo apt-get install npm -y
+sudo ln -s /usr/bin/nodejs /usr/bin/node #In later debian (>jessie) and ubuntu (>14.04) add symlink as npm packages call 'node' but debian calls the binary 'nodejs'
+sudo npm install -g less less-plugin-clean-css
 
 echo -e "\n---- Install python packages ----"
 sudo apt-get install python-babel python-pychart python-cups python-dateutil python-decorator python-docutils python-feedparser python-gdata python-geoip python-gevent python-greenlet python-jinja2 python-ldap python-libxslt1 python-lxml python-mako python-markupsafe python-mock python-openid python-passlib python-pil python-psutil python-psycopg2 python-pydot python-pyparsing python-pypdf python-tz python-usb python-yaml python-qrcode python-reportlab python-requests python-simplejson python-six python-unicodecsv python-unittest2 python-vatnumber python-vobject python-webdav python-werkzeug python-xlwt python-zsi -y
