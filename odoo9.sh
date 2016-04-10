@@ -70,7 +70,7 @@ echo -e "\n==== Installing ODOO Server ===="
 sudo git clone --depth 1 --branch $OE_VERSION https://www.github.com/odoo/odoo $OE_HOME_EXT/
 
 echo -e "\n---- Intalling dependencies -----"
-pip install -r $OE_HOME/requirements.txt
+pip install -r $OE_HOME_EXT/requirements.txt
 
 echo -e "\n---- Create custom module directory ----"
 sudo su $OE_USER -c "mkdir $OE_HOME/custom"
