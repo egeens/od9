@@ -49,7 +49,7 @@ sudo apt-get install python-pip -y
 
 echo -e "\n---- Install Nodejs and npm ----"
 sudo apt-get install npm -y
-sudo apt-get install nodejs
+sudo apt-get install node-less
 sudo ln -s /usr/bin/nodejs /usr/bin/node #In later debian (>jessie) and ubuntu (>14.04) add symlink as npm packages call 'node' but debian calls the binary 'nodejs'
 sudo npm install -g less less-plugin-clean-css
 
