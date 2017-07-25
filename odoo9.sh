@@ -18,7 +18,7 @@ OE_HOME_EXT="/opt/$OE_USER/$OE_USER"
 # Enter Odoo version for checkout "9.0" for version 9.0, 8.0, 7.0 (version 7), saas-4, saas-5 (opendays version) and "master" for trunk
 OE_VERSION="9.0"
 # Enter Postgresql version
-PG_VERSION="9.3"
+PG_VERSION="9.5"
 
 # Set the superadmin password
 # Don't forget to change once Odoo is installed
