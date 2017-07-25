@@ -93,12 +93,24 @@ sudo su root -c "echo '#!/bin/sh' >> $OE_HOME_EXT/start.sh"
 sudo su root -c "echo 'sudo -u $OE_USER $OE_HOME_EXT/odoo-server --config=/etc/$OE_CONFIG.conf' >> $OE_HOME_EXT/start.sh"
 sudo chmod 755 $OE_HOME_EXT/start.sh
 
-echo -e "* Installing Wkhtmltopdf *"
-## sudo wget http://downloads.sourceforge.net/project/wkhtmltopdf/archive/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
-sudo wget http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
-sudo dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
-sudo cp /usr/local/bin/wkhtmltopdf /usr/bin
-sudo cp /usr/local/bin/wkhtmltoimage /usr/bin
+#--------------------------------------------------
+# Install Wkhtmltopdf if needed
+#--------------------------------------------------
+if [ $INSTALL_WKHTMLTOPDF = "True" ]; then
+  echo -e "\n---- Install wkhtml and place shortcuts on correct place for ODOO 9 ----"
+  #pick up correct one from x64 & x32 versions:
+  if [ "`getconf LONG_BIT`" == "64" ];then
+      _url=$WKHTMLTOX_X64
+  else
+      _url=$WKHTMLTOX_X32
+  fi
+  sudo wget $_url
+  sudo gdebi --n `basename $_url`
+  sudo ln -s /usr/local/bin/wkhtmltopdf /usr/bin
+  sudo ln -s /usr/local/bin/wkhtmltoimage /usr/bin
+else
+  echo "Wkhtmltopdf isn't installed due to the choice of the user!"
+fi
 
 #--------------------------------------------------
 # Adding ODOO as a deamon (initscript)
